@@ -35,17 +35,13 @@
         responsive: true,
         fluid: true,
         poster: props.poster,
+        playsinline: true,
         sources: [
           {
             src: props.src,
             type: "application/x-mpegURL",
           },
         ],
-        html5: {
-          hls: {
-            overrideNative: true,
-          },
-        },
       };
 
       // 使用回调形式初始化播放器
@@ -97,13 +93,8 @@
 
 <style scoped lang="scss">
   .video-player-container {
+    position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9; /* 保持宽高比 */
-    overflow: hidden;
-    :deep(.video-js) {
-      .vjs-poster {
-        background-size: cover;
-      }
-    }
+    height: 100%;
   }
 </style>
