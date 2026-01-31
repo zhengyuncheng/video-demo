@@ -1,4 +1,6 @@
-/* 自定义重置样式 */
+/* CSS 重置样式 */
+
+/* 全局重置 */
 *,
 *::before,
 *::after {
@@ -7,20 +9,32 @@
   padding: 0;
 }
 
+/* HTML 和 body 基础样式 */
 html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* 禁止双击缩放 */
+  touch-action: manipulation;
+  /* 优化移动端滚动 */
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
   margin: 0;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* 禁止文本选择（可选） */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* 优化移动端触摸效果 */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* 移除默认的列表样式 */
@@ -33,6 +47,8 @@ ol {
 a {
   color: inherit;
   text-decoration: none;
+  /* 优化移动端点击效果 */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* 确保图片和视频响应式 */
@@ -50,4 +66,238 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+  /* 优化移动端点击效果 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 移除默认的输入框样式 */
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  /* 允许文本选择 */
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* 移除默认的表格边距 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 移除默认的引用样式 */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* 移除默认的代码块样式 */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+}
+
+/* 移除默认的表单样式 */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 移除默认的标题样式 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* 移除默认的段落样式 */
+p {
+  margin: 0;
+}
+
+/* 移除默认的强调样式 */
+em,
+i {
+  font-style: normal;
+}
+
+/* 移除默认的强调样式 */
+strong,
+b {
+  font-weight: normal;
+}
+
+/* 移除默认的下划线样式 */
+u {
+  text-decoration: none;
+}
+
+/* 移除默认的删除线样式 */
+s,
+del {
+  text-decoration: none;
+}
+
+/* 移除默认的标记样式 */
+mark {
+  background: none;
+}
+
+/* 移除默认的缩进样式 */
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+/* 移除默认的引用样式 */
+q::before,
+q::after {
+  content: '';
+}
+
+/* 移除默认的列表样式 */
+li {
+  list-style: none;
+}
+
+/* 移除默认的描述列表样式 */
+dt,
+dd {
+  margin: 0;
+}
+
+/* 移除默认的详情样式 */
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+/* 移除默认的对话框样式 */
+dialog {
+  border: none;
+  padding: 0;
+}
+
+/* 移除默认的进度条样式 */
+progress {
+  vertical-align: baseline;
+}
+
+/* 移除默认的度量样式 */
+meter {
+  vertical-align: baseline;
+}
+
+/* 移除默认的音频样式 */
+audio {
+  display: inline;
+  vertical-align: baseline;
+}
+
+/* 移除默认的画布样式 */
+canvas {
+  display: inline;
+}
+
+/* 移除默认的模板样式 */
+template {
+  display: none;
+}
+
+/* 移除默认的隐藏元素样式 */
+[hidden] {
+  display: none;
+}
+
+/* 移除默认的滚动条样式（可选） */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 移除默认的选择样式（可选） */
+::selection {
+  background: #b3d4fc;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  color: #fff;
+}
+
+/* 移动端适配辅助类 */
+@media (max-width: 640px) {
+  /* 优化移动端容器宽度 */
+  .container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  /* 优化移动端按钮点击区域 */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* 优化移动端输入框 */
+  input,
+  textarea {
+    min-height: 44px;
+  }
+  
+  /* 优化移动端图片 */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* 触摸反馈效果 */
+.touch-feedback {
+  transition: transform 0.1s ease-in-out;
+}
+
+.touch-feedback:active {
+  transform: scale(0.98);
+}
+
+/* 禁止滚动 */
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* 响应式字体大小 */
+.text-responsive {
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
